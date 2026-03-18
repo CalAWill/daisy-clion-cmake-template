@@ -28,7 +28,7 @@ Because this project relies on STMicroelectronics drivers nested inside `libDais
 
 Run this in your terminal:
 ```bash
-git clone --recursive <your-repo-url-here>
+git clone --recursive https://github.com/CalAWill/daisy-clion-cmake-template
 ```
 *(If you forgot the flag and your `lib` folders are empty, run `git submodule update --init --recursive` inside the project folder to fix it).*
 
