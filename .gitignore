@@ -1,0 +1,10 @@
+# CLion specific
+.idea/
+cmake-build-*/
+
+# Build artifacts
+*.o
+*.elf
+*.bin
+*.hex
+*.map
