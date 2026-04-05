@@ -28,7 +28,7 @@ Because this project relies on STMicroelectronics drivers nested inside `libDais
 
 Run this in your terminal:
 ```bash
-git clone --recursive https://github.com/CalAWill/daisy-clion-cmake-template
+git clone --recursive https://github.com/CalAWill/daisy-clion-cmake-template <your-project-name>
 ```
 *(If you forgot the flag and your `lib` folders are empty, run `git submodule update --init --recursive` inside the project folder to fix it).*
 
@@ -63,9 +63,36 @@ Thanks to the included `.run` configurations, your dropdown menu in the top righ
 
 ---
 
-## 5. Starting a New Synthesizer
-When you are ready to start a new project:
-1. Copy this entire folder.
-2. Open `CMakeLists.txt`.
-3. Change the name on **Line 6** (`project(DaisyTemplate C CXX ASM)`) to your new project's name.
-4. Reload the CMake project. Everything else will update automatically!
+## 5. Starting a New Project
+To use this template as a starting point for a new repository:
+
+1. **Clone the template into a new folder:**
+   ```bash
+   git clone --recursive https://github.com/CalAWill/daisy-clion-cmake-template my-new-project
+   cd my-new-project
+   ```
+
+2. **Reset the Git history:**
+   ```bash
+   rm -rf .git
+   git init
+   git add .
+   git commit -m "Initial commit from Daisy template"
+   ```
+
+3. **Re-initialize the Daisy submodules:**
+   *Because the `.git` folder was deleted, you need to re-link the submodules to your new repository:*
+   ```bash
+   git submodule add https://github.com/electro-smith/libDaisy lib/libDaisy
+   git submodule add https://github.com/electro-smith/DaisySP lib/DaisySP
+   git submodule update --init --recursive
+   ```
+
+4. **Rename your project:**
+   Open `CMakeLists.txt` and update the `project()` name on **line 4**:
+   ```cmake
+   project(MyNewProjectName C CXX ASM)
+   ```
+
+5. **Open in CLion:**
+   Follow the setup instructions in **Section 3** to configure your toolchain.
