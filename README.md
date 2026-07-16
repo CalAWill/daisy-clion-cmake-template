@@ -1,6 +1,6 @@
 # 🌼 Daisy Seed CLion & CMake Template
 
-A plug-and-play template for building bare-metal C++ audio applications for the Electro-Smith Daisy Seed using CMake and CLion.
+A plug-and-play template for building C++ audio applications for the Electro-Smith Daisy Seed using CMake and CLion.
 
 This template includes pre-configured run configurations for **USB Flashing (DFU)** and **Hardware Debugging (ST-Link)**.
 
